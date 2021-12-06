@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        {% for student in students %}
+            <div>
+                {{ student.name }}<br>
+                {{ student.email }}<br>
+                {{ student.semester }}<br>
+                <a href="{% url 'detail_view' student.id %}">details</a>
+                <a href="{% url 'update_view' student.id %}">edit</a>
+                <a href="{% url 'delete_view' student.id %}">delete</a>
+                <a href="{% url 'create_view' %}">insert</a>
+            <hr>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
